@@ -17,14 +17,15 @@ int main() {
 
         ll r = 0, sum = 0, cnt = 0;
         bool ok = true;
-
+        ll mx = a[0];
         while (r < n) {
             sum += a[r];
+            mx= max(mx, a[r]);
             if (sum <= k) {
                 cnt++;
             }
             if (sum > k && ok == true) {
-                sum -= a[r];
+                sum -= mx;
                 ok = false;
                 cnt++;
             }
